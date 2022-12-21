@@ -1,14 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
+import { mobile } from '../responsive';
 
 const Container = styled.div`
     display: flex;
     justify-content: space-between;
     margin: 20px;
+   
 `
 
 const FilterItem = styled.div`
-    
+
 `
 
 const FilterText = styled.span`
@@ -20,6 +22,10 @@ const FilterText = styled.span`
 const Select = styled.select`
     padding: 10px;
     margin-right:20px;
+    ${mobile({
+        margin: '10px 0',
+        width: '90%',
+    })}
 `
 
 const Option = styled.option`

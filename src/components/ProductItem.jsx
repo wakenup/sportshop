@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import SearchIcon from '@mui/icons-material/Search';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import {mobile} from '../responsive';
+import { Link } from 'react-router-dom';
 
 const Info = styled.div`
     opacity:0;
@@ -21,8 +23,8 @@ const Info = styled.div`
 const Container = styled.div`
     flex :1;
     margin: 5px;
-    min-width: 330px;
-    height: 350px;
+    min-width: 300px;
+    height: 380px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -32,6 +34,10 @@ const Container = styled.div`
     &:hover ${Info} {
         opacity: 1;
     }
+
+    ${mobile({
+        height: '420px',
+    })}
 `
 
 const Image = styled.img`
@@ -55,15 +61,18 @@ const Icon = styled.div`
     }
 `
 const ProductDesc = styled.div`
-    
+    text-align: center;
 `
 
 const Title = styled.div`
     font-size: 20px;
+    font-weight: 300;
+    margin: 5px 0;
 `
 
 const Price = styled.span`
-    font-size:18px;
+    font-size:20px;
+    margin: 0 auto;
 `
 
 const Product = styled.div`
@@ -80,8 +89,8 @@ const ProductItem = ({ item }) => {
             <Product>
                 <Image src={item.img} />
                 <ProductDesc>
-                    <Title>Коньки TREK Skate Fur</Title>
-                    <Price>130 р.</Price>
+                    <Title>{item.title}</Title>
+                    <Price>{item.price}</Price>
                 </ProductDesc>
             </Product>
             <Info>
@@ -89,7 +98,9 @@ const ProductItem = ({ item }) => {
                     <ShoppingCartIcon />
                 </Icon>
                 <Icon>
+                    <Link to='/product' style={{textDecoration:'none', color:'black', transform:'scale(1.1)'}}>
                     <SearchIcon />
+                    </Link>
                 </Icon>
                 <Icon>
                     <FavoriteBorderIcon />

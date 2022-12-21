@@ -5,6 +5,7 @@ import Navbar from '../components/Navbar';
 import Newsletter from '../components/Newsletter';
 import RemoveIcon from '@mui/icons-material/Remove';
 import AddIcon from '@mui/icons-material/Add';
+import { mobile } from '../responsive';
 
 const Container = styled.div`
     
@@ -13,10 +14,17 @@ const Container = styled.div`
 const Wrapper = styled.div`
     padding: 50px;
     display: flex;
+    ${mobile({
+        flexDirection:'column',
+        padding:'0',
+    })}
 `
 
 const ImgContainer = styled.div`
     flex:1;
+    ${mobile({
+        padding:'40px',
+    })}
 `
 
 const Image = styled.img`
@@ -48,11 +56,17 @@ const FilterContainer = styled.div`
     margin: 30px 0;
     display: flex;
     justify-content: space-between;
+    ${mobile({
+        flexDirection:'column',
+    })}
 `
 
 const FilterItem = styled.div`
     display: flex;
     align-items: center;
+    ${mobile({
+        margin: '5px 0'
+    })}
 `
 
 const FilterTitle = styled.span`
@@ -89,6 +103,10 @@ const AddContainer = styled.div`
     width: 50%;
     justify-content: space-between;
     align-items: center;
+    ${mobile({
+        width : '100%',
+        margin: '20px 0',
+    })}
 `
 const Amount = styled.span`
     width: 30px;
@@ -110,6 +128,10 @@ const Button = styled.button`
     &:hover {
         background-color: #f9f6f6;
     }
+
+    ${mobile({
+        margin:'0 20px',
+    })}
 `
 
 const Product = () => {

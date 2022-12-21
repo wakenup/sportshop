@@ -13,6 +13,7 @@ const Home = () => {
         <Navbar />
         <Slider />
         <Categories/>
+        <h1 style={{textAlign: 'center', margin:'20px 0'}}>ХИТЫ ПРОДАЖ</h1>
         <Products />
         <Newsletter />
         <Footer />

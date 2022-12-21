@@ -4,10 +4,14 @@ import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import RemoveIcon from '@mui/icons-material/Remove';
 import AddIcon from '@mui/icons-material/Add';
+import {mobile} from '../responsive';
 
 const Container = styled.div``
 const Wrapper = styled.div`
     padding: 20px;
+    ${mobile({
+        padding: '10px',
+    })}
 `
 const Title = styled.h1`
     font-weight: 300;
@@ -18,13 +22,16 @@ const Top = styled.div`
     align-items: center;
     justify-content: space-between;
     padding: 20px;
-
 `
 
 const TopButton = styled.button`
     padding: 10px;
     font-weight: 500;
     cursor: pointer;
+    ${mobile({
+        margin: '0 10px',
+        width: '40%',
+    })}
 `
 
 const TopTexts = styled.div``
@@ -32,12 +39,18 @@ const TopText = styled.span`
     text-decoration:underline;
     cursor: pointer;
     margin: 0 10px;
+    ${mobile({
+        display: 'none',
+    })}
 `
 
 const Bottom = styled.div`
     display: flex;
     justify-content: space-between;
     padding:30px;
+    ${mobile({
+        flexDirection:'column',
+    })}
 `
 
 const Info = styled.div`
@@ -47,11 +60,18 @@ const Info = styled.div`
 const Product = styled.div`
     display: flex;
     justify-content: space-between;
+    ${mobile({
+        flexDirection:'column',
+        margin: '10px 0',
+    })}
 
 `
 const ProductDetail = styled.div`
     flex: 2;
     display: flex;
+    ${mobile({
+        flexDirection:'column',
+    })}
 `
 const Image = styled.img`
     width: 200px;
